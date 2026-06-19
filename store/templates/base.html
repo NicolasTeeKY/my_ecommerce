@@ -1,0 +1,98 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}South Art{% endblock %}</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: sans-serif; background: #f4f7f6; color: #333; }
+        
+        /* Header Fix */
+        header {
+            background: linear-gradient(135deg, #6e8efb, #a777e3);
+            color: white; padding: 15px;
+            display: flex; flex-direction: column; align-items: center; gap: 10px;
+        }
+        .nav-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; width: 100%; }
+        .btn-nav {
+            padding: 6px 12px; border: 1px solid white; border-radius: 15px;
+            color: white; text-decoration: none; font-size: 13px; background: rgba(255,255,255,0.1);
+        }
+        .seller-btn { background: #2ecc71 !important; border: none !important; font-weight: bold; }
+
+        /* Search Bar */
+        .search-form { display: flex; width: 100%; max-width: 400px; background: white; border-radius: 20px; overflow: hidden; }
+        .search-form input { flex: 1; border: none; padding: 8px 15px; outline: none; }
+        .search-form button { border: none; background: #2ecc71; color: white; padding: 0 15px; }
+
+        /* Layout */
+        .wrapper { display: flex; flex-direction: column; padding: 15px; gap: 20px; max-width: 1200px; margin: auto; }
+        #sidebar { background: white; padding: 15px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+        #main-content { flex: 1; background: white; padding: 15px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+
+        /* Image Constraint */
+        .img-container { width: 100%; max-height: 400px; overflow: hidden; border-radius: 8px; text-align: center; background: #eee; }
+        .img-container img { max-width: 100%; max-height: 400px; object-fit: contain; }
+
+        @media (min-width: 768px) {
+            header { flex-direction: row; justify-content: space-between; }
+            .wrapper { flex-direction: row; }
+            #sidebar { width: 220px; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="{% url 'store:product_list' %}" style="text-decoration:none; color:white;"><h3>🛒 South Art</h3></a>
+
+        <form action="{% url 'store:product_list' %}" method="get" class="search-form">
+            <input type="text" name="q" placeholder="Search..." value="{{ query|default:'' }}">
+            <button type="submit">🔍</button>
+        </form>
+
+        <nav class="nav-links">
+		<a href="{% url 'cart:cart_detail' %}" class="btn-nav">
+    Cart 🛒
+    {% if cart|length > 0 %}
+        <span style="background: #e74c3c; color: white; border-radius: 50%; padding: 2px 6px; font-size: 10px; margin-left: 5px;">
+            {{ cart|length }}
+        </span>
+    {% endif %}
+</a>
+            {% if user.is_authenticated %}
+                <a href="{% url 'store:order_history' %}" class="btn-nav">Orders</a>
+                {% if user.is_seller %}
+                    <a href="{% url 'store:seller_dashboard' %}" class="btn-nav seller-btn">Shop Manager</a>
+                    <a href="{% url 'store:add_product' %}" class="btn-nav seller-btn">+ Add Product</a>
+                {% endif %}
+                <form action="{% url 'logout' %}" method="post" style="display:inline;">
+                    {% csrf_token %}<button type="submit" class="btn-nav">Logout</button>
+                </form>
+            {% else %}
+                <a href="{% url 'login' %}" class="btn-nav">Login</a>
+                <a href="{% url 'store:register' %}" class="btn-nav">Register</a>
+            {% endif %}
+        </nav>
+    </header>
+
+    <div class="wrapper">
+        <aside id="sidebar">
+            <h4 style="margin-bottom:10px;">Categories</h4>
+            <ul style="list-style:none;">
+                <li><a href="{% url 'store:product_list' %}" style="text-decoration:none; color:#6e8efb;">All Products</a></li>
+                {% for category in categories %}
+                    <li style="margin-top:8px;">
+                        <a href="{% url 'store:product_list_by_category' category.slug %}" style="text-decoration:none; color:#555;">{{ category.name }}</a>
+                    </li>
+                {% endfor %}
+            </ul>
+        </aside>
+        <main id="main-content">
+            {% block content %}{% endblock %}
+        </main>
+    </div>
+</body>
+</html>
+

@@ -1,0 +1,14 @@
+asgiref==3.11.1
+certifi==2026.6.17
+charset-normalizer==3.4.7
+Django==6.0.6
+django-crispy-forms==2.6
+idna==3.18
+packaging==26.2
+pillow==12.2.0
+requests==2.34.2
+setuptools==82.0.1
+sqlparse==0.5.5
+urllib3==2.7.0
+wheel==0.47.0
+psycopg==3.3.4

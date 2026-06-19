@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div style="max-width: 500px; margin: 40px auto; padding: 30px; background: white; border-radius: 15px; box-shadow: 0 10px 25px rgba(0,0,0,0.1);">
+    <h2 style="color: #e74c3c; text-align: center;">FICA Verification Required</h2>
+    <p style="text-align: center; color: #666; margin-bottom: 25px;">To comply with South African law and protect our marketplace, sellers must verify their identity before listing products.</p>
+    
+    {% if user.fica_submitted_at and not user.is_fica_verified %}
+        <div style="background: #fff3cd; color: #856404; padding: 15px; border-radius: 8px; text-align: center;">
+            <strong>Status: Pending Review</strong><br>
+            Your documents were submitted on {{ user.fica_submitted_at|date }}. Please wait 24-48 hours for approval.
+        </div>
+    {% else %}
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="registration-form">
+                {{ form.as_p }}
+            </div>
+            <button type="submit" style="width: 100%; padding: 12px; background: #6e8efb; color: white; border: none; border-radius: 25px; font-weight: bold; cursor: pointer; margin-top: 20px;">
+                Submit for Verification 🛡️
+            </button>
+        </form>
+    {% endif %}
+</div>
+{% endblock %}
+

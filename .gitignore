@@ -1,0 +1,36 @@
+# Python
+__pycache__/
+*.py[cod]
+*.so
+*.egg
+*.egg-info/
+*.dist-info/
+venv/
+env/
+ENV/
+/.venv
+
+# Django
+*.log
+local_settings.py
+db.sqlite3
+media/
+staticfiles/
+database/
+
+# Postgres data directories
+base/
+global/
+pg_wal/
+pg_xact/
+
+# IDEs
+.vscode/
+.idea/
+
+# Environment
+.env
+.venv
+
+# Byte-compiled
+*.pyc

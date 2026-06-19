@@ -1,0 +1,94 @@
+/* 1. Header & Navigation Fixes */
+#header {
+    background: linear-gradient(135deg, #6e8efb, #a777e3);
+    color: white;
+    padding: 1rem 5%;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; /* Prevents button overlapping */
+    gap: 15px;
+}
+
+.nav-menu {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+/* 2. Layout Structure */
+.layout-wrapper {
+    display: flex;
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 15px;
+    gap: 20px;
+}
+
+#sidebar {
+    flex: 0 0 220px;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    height: fit-content;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+#main-content {
+    flex: 1;
+}
+
+/* 3. THE IMAGE SIZE FIX (Crucial for your screenshot issue) */
+.product-image {
+    width: 100%;
+    height: 250px; /* Limits the height of the image box */
+    overflow: hidden;
+    border-radius: 8px 8px 0 0;
+}
+
+.product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Crops the large image to fit the box perfectly */
+}
+
+/* 4. Responsive View for Mobile */
+@media (max-width: 768px) {
+    .layout-wrapper {
+        flex-direction: column; /* Sidebar moves to top on mobile */
+    }
+    #sidebar {
+        width: 100%;
+    }
+}
+
+.product-grid {
+    display: grid;
+    /* This creates columns that auto-adjust to screen size */
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    width: 100%;
+}
+
+.product-card {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.search-form {
+    margin: 10px auto; /* Centers the search bar */
+    padding: 0 15px;
+}
+
+@media (max-width: 768px) {
+    .search-form {
+        max-width: 100%; /* Takes full width on mobile */
+    }
+}
+

@@ -1,0 +1,56 @@
+2026-03-04 16:04:54.237 SAST [25391] LOG:  starting PostgreSQL 18.2 on aarch64-unknown-linux-android, compiled by Android (13989888, +pgo, +bolt, +lto, +mlgo, based on r563880c) clang version 21.0.0 (https://android.googlesource.com/toolchain/llvm-project 5e96669f06077099aa41290cdb4c5e6fa0f59349), 64-bit
+2026-03-04 16:04:54.238 SAST [25391] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2026-03-04 16:04:54.240 SAST [25391] LOG:  listening on Unix socket "/data/data/com.termux/files/usr/tmp/.s.PGSQL.5432"
+2026-03-04 16:04:54.257 SAST [25399] LOG:  database system was shut down at 2026-03-04 16:04:20 SAST
+2026-03-04 16:04:54.276 SAST [25391] LOG:  database system is ready to accept connections
+2026-03-04 16:06:06.656 SAST [26625] FATAL:  role "Nico" does not exist
+2026-03-04 16:09:33.045 SAST [28059] FATAL:  lock file "postmaster.pid" already exists
+2026-03-04 16:09:33.045 SAST [28059] HINT:  Is another postmaster (PID 25391) running in data directory "/data/data/com.termux/files/home/my_ecommerce/database"?
+2026-03-04 16:09:54.265 SAST [25397] LOG:  checkpoint starting: time
+2026-03-04 16:09:56.370 SAST [25397] LOG:  checkpoint complete: wrote 20 buffers (0.1%), wrote 3 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=2.065 s, sync=0.007 s, total=2.114 s; sync files=10, longest=0.003 s, average=0.001 s; distance=120 kB, estimate=120 kB; lsn=0/1781C48, redo lsn=0/1781BF0
+2026-03-04 16:17:25.877 SAST [29891] ERROR:  role "Nico" already exists
+2026-03-04 16:17:25.877 SAST [29891] STATEMENT:  CREATE ROLE "Nico" WITH LOGIN PASSWORD '123456' SUPERUSER;
+2026-03-04 16:18:59.398 SAST [29891] ERROR:  syntax error at or near "dropuser" at character 1
+2026-03-04 16:18:59.398 SAST [29891] STATEMENT:  dropuser Nico
+	CREATE ROLE "Nico" WITH LOGIN PASSWORD '123456' SUPERUSER;
+2026-03-04 16:19:54.376 SAST [25397] LOG:  checkpoint starting: time
+2026-03-04 16:19:54.871 SAST [25397] LOG:  checkpoint complete: wrote 4 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.421 s, sync=0.005 s, total=0.500 s; sync files=5, longest=0.002 s, average=0.001 s; distance=3 kB, estimate=108 kB; lsn=0/1782B90, redo lsn=0/1782B38
+2026-03-04 16:19:57.542 SAST [29891] ERROR:  syntax error at or near "dropuser" at character 1
+2026-03-04 16:19:57.542 SAST [29891] STATEMENT:  dropuser Nico
+	CREATE ROLE "Nico" WITH LOGIN PASSWORD '123456' SUPERUSER;
+2026-03-04 16:35:49.032 SAST [6531] FATAL:  database "django" does not exist
+2026-03-04 16:36:22.158 SAST [6545] FATAL:  database "django" does not exist
+2026-06-19 10:49:12.153 SAST [10877] LOG:  starting PostgreSQL 18.2 on aarch64-unknown-linux-android, compiled by Android (13989888, +pgo, +bolt, +lto, +mlgo, based on r563880c) clang version 21.0.0 (https://android.googlesource.com/toolchain/llvm-project 5e96669f06077099aa41290cdb4c5e6fa0f59349), 64-bit
+2026-06-19 10:49:12.165 SAST [10877] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2026-06-19 10:49:12.169 SAST [10877] LOG:  listening on Unix socket "/data/data/com.termux/files/usr/tmp/.s.PGSQL.5432"
+2026-06-19 10:49:12.229 SAST [10885] LOG:  database system was interrupted; last known up at 2026-03-04 16:58:00 SAST
+2026-06-19 10:49:12.597 SAST [10885] LOG:  database system was not properly shut down; automatic recovery in progress
+2026-06-19 10:49:12.601 SAST [10885] LOG:  redo starts at 0/1782CB8
+2026-06-19 10:49:12.601 SAST [10885] LOG:  invalid record length at 0/1782CF0: expected at least 24, got 0
+2026-06-19 10:49:12.601 SAST [10885] LOG:  redo done at 0/1782CB8 system usage: CPU: user: 0.00 s, system: 0.00 s, elapsed: 0.00 s
+2026-06-19 10:49:12.612 SAST [10883] LOG:  checkpoint starting: end-of-recovery immediate wait
+2026-06-19 10:49:12.630 SAST [10883] LOG:  checkpoint complete: wrote 0 buffers (0.0%), wrote 3 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.005 s, sync=0.002 s, total=0.020 s; sync files=2, longest=0.001 s, average=0.001 s; distance=0 kB, estimate=0 kB; lsn=0/1782CF0, redo lsn=0/1782CF0
+2026-06-19 10:49:12.636 SAST [10877] LOG:  database system is ready to accept connections
+2026-06-19 10:50:05.414 SAST [10970] FATAL:  database "django" does not exist
+2026-06-19 10:50:34.621 SAST [11162] FATAL:  database "u0_a300" does not exist
+2026-06-19 10:50:52.957 SAST [11194] ERROR:  syntax error at or near "29273" at character 4
+2026-06-19 10:50:52.957 SAST [11194] STATEMENT:  DO 29273 BEGIN IF NOT EXISTS (SELECT FROM pg_roles WHERE rolname = 'Nico') THEN CREATE ROLE "Nico" WITH LOGIN PASSWORD '123456'; ELSE ALTER ROLE "Nico" WITH PASSWORD '123456'; END IF; END29273;
+2026-06-19 10:51:16.661 SAST [11257] ERROR:  function dblink_exec(unknown, unknown) does not exist at character 8
+2026-06-19 10:51:16.661 SAST [11257] HINT:  No function matches the given name and argument types. You might need to add explicit type casts.
+2026-06-19 10:51:16.661 SAST [11257] QUERY:  SELECT dblink_exec('dbname=postgres','CREATE DATABASE django OWNER "Nico"')
+2026-06-19 10:51:16.661 SAST [11257] CONTEXT:  PL/pgSQL function inline_code_block line 4 at PERFORM
+2026-06-19 10:51:16.661 SAST [11257] STATEMENT:  DO $$
+	BEGIN
+	  IF NOT EXISTS (SELECT FROM pg_database WHERE datname = 'django') THEN
+	    PERFORM dblink_exec('dbname=postgres','CREATE DATABASE django OWNER "Nico"');
+	  END IF;
+	END
+	$$;
+2026-06-19 10:54:12.633 SAST [10883] LOG:  checkpoint starting: time
+2026-06-19 10:55:57.435 SAST [10883] LOG:  checkpoint complete: wrote 1026 buffers (6.3%), wrote 1 SLRU buffers; 1 WAL file(s) added, 0 removed, 0 recycled; write=103.928 s, sync=0.706 s, total=104.802 s; sync files=411, longest=0.011 s, average=0.002 s; distance=5045 kB, estimate=5045 kB; lsn=0/1C75FB0, redo lsn=0/1C702B8
+2026-06-19 10:59:12.449 SAST [10883] LOG:  checkpoint starting: time
+2026-06-19 10:59:13.413 SAST [10883] LOG:  checkpoint complete: wrote 9 buffers (0.1%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.938 s, sync=0.006 s, total=0.965 s; sync files=7, longest=0.002 s, average=0.001 s; distance=26 kB, estimate=4543 kB; lsn=0/1C76EB8, redo lsn=0/1C76E60
+2026-06-19 11:04:12.421 SAST [10883] LOG:  checkpoint starting: time
+2026-06-19 11:04:13.837 SAST [10883] LOG:  checkpoint complete: wrote 13 buffers (0.1%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=1.347 s, sync=0.019 s, total=1.421 s; sync files=11, longest=0.005 s, average=0.002 s; distance=10 kB, estimate=4090 kB; lsn=0/1C7A9B8, redo lsn=0/1C79870
+2026-06-19 11:09:12.847 SAST [10883] LOG:  checkpoint starting: time
+2026-06-19 11:09:16.945 SAST [10883] LOG:  checkpoint complete: wrote 39 buffers (0.2%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=4.040 s, sync=0.026 s, total=4.099 s; sync files=28, longest=0.003 s, average=0.001 s; distance=74 kB, estimate=3688 kB; lsn=0/1C8C230, redo lsn=0/1C8C1A0

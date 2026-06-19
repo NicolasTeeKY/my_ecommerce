@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Your Shopping Cart
+{% endblock %}
+
+{% block content %}
+    <h1>Your Shopping Cart</h1>
+    
+    {% if not cart_items %}
+        <p>Your cart is empty. <a href="{% url 'store:product_list' %}">Start shopping here!</a></p>
+    {% else %}
+        <table>
+            <thead>
+                <tr>
+                    <th>Product</th>
+                    <th>Unit Price</th>
+                    <th>Quantity</th>
+                    <th>Subtotal</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in cart_items %}
+                <tr>
+                    <td>{{ item.product.name }}</td>
+                    <td>${{ item.product.price }}</td>
+                    <td>{{ item.quantity }}</td>
+                    <td>${{ item.sub_total }}</td>
+                    <td>
+                        <a href="#">-</a>
+                        <a href="#">+</a>
+                        <a href="#">Remove</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        <div style="text-align: right; margin-top: 20px;">
+            <h3>Total Items: {{ counter }}</h3>
+            <h2>Grand Total: ${{ total }}</h2>
+            <button style="padding: 15px 30px; background-color: green; color: white; border: none; font-size: 1.2em;">
+                Checkout
+            </button>
+        </div>
+    {% endif %}
+
+{% endblock %}
+
