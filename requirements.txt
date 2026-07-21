@@ -5,7 +5,7 @@ Django==6.0.6
 django-crispy-forms==2.6
 idna==3.18
 packaging==26.2
-pillow==12.2.0
+pillow==12.3.0
 requests==2.34.2
 setuptools==82.0.1
 sqlparse==0.5.5
