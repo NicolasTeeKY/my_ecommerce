@@ -78,3 +78,27 @@
 2026-08-11 16:30:27.350 SAST [11050] LOG:  database system is ready to accept connections
 2026-08-11 16:35:27.356 SAST [11056] LOG:  checkpoint starting: time
 2026-08-11 16:35:27.860 SAST [11056] LOG:  checkpoint complete: wrote 4 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.427 s, sync=0.002 s, total=0.517 s; sync files=5, longest=0.001 s, average=0.001 s; distance=13 kB, estimate=13 kB; lsn=0/1C8F8D8, redo lsn=0/1C8F880
+2026-08-11 16:59:24.615 SAST [22711] LOG:  starting PostgreSQL 18.2 on aarch64-unknown-linux-android, compiled by Android (13989888, +pgo, +bolt, +lto, +mlgo, based on r563880c) clang version 21.0.0 (https://android.googlesource.com/toolchain/llvm-project 5e96669f06077099aa41290cdb4c5e6fa0f59349), 64-bit
+2026-08-11 16:59:24.618 SAST [22711] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2026-08-11 16:59:24.624 SAST [22711] LOG:  listening on Unix socket "/data/data/com.termux/files/usr/tmp/.s.PGSQL.5432"
+2026-08-11 16:59:24.658 SAST [22719] LOG:  database system was interrupted; last known up at 2026-08-11 16:35:27 SAST
+2026-08-11 16:59:25.438 SAST [22719] LOG:  database system was not properly shut down; automatic recovery in progress
+2026-08-11 16:59:25.446 SAST [22719] LOG:  redo starts at 0/1C8F880
+2026-08-11 16:59:25.447 SAST [22719] LOG:  invalid record length at 0/1C8F988: expected at least 24, got 0
+2026-08-11 16:59:25.447 SAST [22719] LOG:  redo done at 0/1C8F950 system usage: CPU: user: 0.00 s, system: 0.00 s, elapsed: 0.00 s
+2026-08-11 16:59:25.459 SAST [22717] LOG:  checkpoint starting: end-of-recovery immediate wait
+2026-08-11 16:59:25.478 SAST [22717] LOG:  checkpoint complete: wrote 0 buffers (0.0%), wrote 3 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.005 s, sync=0.002 s, total=0.021 s; sync files=2, longest=0.001 s, average=0.001 s; distance=0 kB, estimate=0 kB; lsn=0/1C8F988, redo lsn=0/1C8F988
+2026-08-11 16:59:25.489 SAST [22711] LOG:  database system is ready to accept connections
+2026-08-11 17:06:04.662 SAST [27585] LOG:  starting PostgreSQL 18.2 on aarch64-unknown-linux-android, compiled by Android (13989888, +pgo, +bolt, +lto, +mlgo, based on r563880c) clang version 21.0.0 (https://android.googlesource.com/toolchain/llvm-project 5e96669f06077099aa41290cdb4c5e6fa0f59349), 64-bit
+2026-08-11 17:06:04.665 SAST [27585] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2026-08-11 17:06:04.670 SAST [27585] LOG:  listening on Unix socket "/data/data/com.termux/files/usr/tmp/.s.PGSQL.5432"
+2026-08-11 17:06:04.794 SAST [27593] LOG:  database system was interrupted; last known up at 2026-08-11 16:59:25 SAST
+2026-08-11 17:06:04.989 SAST [27593] LOG:  database system was not properly shut down; automatic recovery in progress
+2026-08-11 17:06:04.993 SAST [27593] LOG:  redo starts at 0/1C8FA00
+2026-08-11 17:06:04.993 SAST [27593] LOG:  invalid record length at 0/1C8FA38: expected at least 24, got 0
+2026-08-11 17:06:04.993 SAST [27593] LOG:  redo done at 0/1C8FA00 system usage: CPU: user: 0.00 s, system: 0.00 s, elapsed: 0.00 s
+2026-08-11 17:06:05.006 SAST [27591] LOG:  checkpoint starting: end-of-recovery immediate wait
+2026-08-11 17:06:05.021 SAST [27591] LOG:  checkpoint complete: wrote 0 buffers (0.0%), wrote 3 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.004 s, sync=0.002 s, total=0.017 s; sync files=2, longest=0.001 s, average=0.001 s; distance=0 kB, estimate=0 kB; lsn=0/1C8FA38, redo lsn=0/1C8FA38
+2026-08-11 17:06:05.027 SAST [27585] LOG:  database system is ready to accept connections
+2026-08-11 17:11:05.029 SAST [27591] LOG:  checkpoint starting: time
+2026-08-11 17:11:05.480 SAST [27591] LOG:  checkpoint complete: wrote 4 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.421 s, sync=0.002 s, total=0.455 s; sync files=5, longest=0.001 s, average=0.001 s; distance=7 kB, estimate=7 kB; lsn=0/1C91698, redo lsn=0/1C91640
