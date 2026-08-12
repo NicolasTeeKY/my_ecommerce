@@ -9,7 +9,23 @@
         * { box-sizing: border-box; margin: 0; padding: 0; }
         body { font-family: sans-serif; background: #f4f7f6; color: #333; }
         
-        /* Header Fix */
+        /* Brand Section */
+        .brand-section {
+            background: linear-gradient(135deg, #6e8efb, #a777e3);
+            color: white; padding: 20px 15px;
+            display: flex; align-items: center; justify-content: center;
+            text-align: center;
+        }
+        .brand-section h3 { margin: 0; font-size: 1.8rem; }
+
+        /* Search Section */
+        .search-section {
+            background: linear-gradient(135deg, #6e8efb, #a777e3);
+            color: white; padding: 15px;
+            display: flex; flex-direction: column; align-items: center; gap: 10px;
+        }
+
+        /* Header (Navigation) */
         header {
             background: linear-gradient(135deg, #6e8efb, #a777e3);
             color: white; padding: 15px;
@@ -44,14 +60,21 @@
     </style>
 </head>
 <body>
-    <header>
+    <!-- Brand Section - Separate from Search -->
+    <div class="brand-section">
         <a href="{% url 'store:product_list' %}" style="text-decoration:none; color:white;"><h3>🛒 South Art</h3></a>
+    </div>
 
+    <!-- Search Section - Separate -->
+    <div class="search-section">
         <form action="{% url 'store:product_list' %}" method="get" class="search-form">
             <input type="text" name="q" placeholder="Search..." value="{{ query|default:'' }}">
             <button type="submit">🔍</button>
         </form>
+    </div>
 
+    <!-- Navigation Header -->
+    <header>
         <nav class="nav-links">
 		<a href="{% url 'cart:cart_detail' %}" class="btn-nav">
     Cart 🛒

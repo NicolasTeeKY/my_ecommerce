@@ -54,3 +54,27 @@
 2026-06-19 11:04:13.837 SAST [10883] LOG:  checkpoint complete: wrote 13 buffers (0.1%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=1.347 s, sync=0.019 s, total=1.421 s; sync files=11, longest=0.005 s, average=0.002 s; distance=10 kB, estimate=4090 kB; lsn=0/1C7A9B8, redo lsn=0/1C79870
 2026-06-19 11:09:12.847 SAST [10883] LOG:  checkpoint starting: time
 2026-06-19 11:09:16.945 SAST [10883] LOG:  checkpoint complete: wrote 39 buffers (0.2%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=4.040 s, sync=0.026 s, total=4.099 s; sync files=28, longest=0.003 s, average=0.001 s; distance=74 kB, estimate=3688 kB; lsn=0/1C8C230, redo lsn=0/1C8C1A0
+2026-07-30 16:54:32.826 SAST [883] LOG:  starting PostgreSQL 18.2 on aarch64-unknown-linux-android, compiled by Android (13989888, +pgo, +bolt, +lto, +mlgo, based on r563880c) clang version 21.0.0 (https://android.googlesource.com/toolchain/llvm-project 5e96669f06077099aa41290cdb4c5e6fa0f59349), 64-bit
+2026-07-30 16:54:32.828 SAST [883] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2026-07-30 16:54:32.831 SAST [883] LOG:  listening on Unix socket "/data/data/com.termux/files/usr/tmp/.s.PGSQL.5432"
+2026-07-30 16:54:32.958 SAST [891] LOG:  database system was interrupted; last known up at 2026-06-19 11:09:16 SAST
+2026-07-30 16:54:33.268 SAST [891] LOG:  database system was not properly shut down; automatic recovery in progress
+2026-07-30 16:54:33.272 SAST [891] LOG:  redo starts at 0/1C8C1A0
+2026-07-30 16:54:33.272 SAST [891] LOG:  invalid record length at 0/1C8C2E0: expected at least 24, got 0
+2026-07-30 16:54:33.272 SAST [891] LOG:  redo done at 0/1C8C2A8 system usage: CPU: user: 0.00 s, system: 0.00 s, elapsed: 0.00 s
+2026-07-30 16:54:33.284 SAST [889] LOG:  checkpoint starting: end-of-recovery immediate wait
+2026-07-30 16:54:33.307 SAST [889] LOG:  checkpoint complete: wrote 0 buffers (0.0%), wrote 3 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.005 s, sync=0.002 s, total=0.026 s; sync files=2, longest=0.002 s, average=0.001 s; distance=0 kB, estimate=0 kB; lsn=0/1C8C2E0, redo lsn=0/1C8C2E0
+2026-07-30 16:54:33.319 SAST [883] LOG:  database system is ready to accept connections
+2026-08-11 16:30:26.619 SAST [11050] LOG:  starting PostgreSQL 18.2 on aarch64-unknown-linux-android, compiled by Android (13989888, +pgo, +bolt, +lto, +mlgo, based on r563880c) clang version 21.0.0 (https://android.googlesource.com/toolchain/llvm-project 5e96669f06077099aa41290cdb4c5e6fa0f59349), 64-bit
+2026-08-11 16:30:26.621 SAST [11050] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2026-08-11 16:30:26.624 SAST [11050] LOG:  listening on Unix socket "/data/data/com.termux/files/usr/tmp/.s.PGSQL.5432"
+2026-08-11 16:30:26.664 SAST [11058] LOG:  database system was interrupted; last known up at 2026-07-30 16:54:33 SAST
+2026-08-11 16:30:27.298 SAST [11058] LOG:  database system was not properly shut down; automatic recovery in progress
+2026-08-11 16:30:27.309 SAST [11058] LOG:  redo starts at 0/1C8C358
+2026-08-11 16:30:27.309 SAST [11058] LOG:  invalid record length at 0/1C8C390: expected at least 24, got 0
+2026-08-11 16:30:27.309 SAST [11058] LOG:  redo done at 0/1C8C358 system usage: CPU: user: 0.00 s, system: 0.00 s, elapsed: 0.00 s
+2026-08-11 16:30:27.324 SAST [11056] LOG:  checkpoint starting: end-of-recovery immediate wait
+2026-08-11 16:30:27.338 SAST [11056] LOG:  checkpoint complete: wrote 0 buffers (0.0%), wrote 3 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.004 s, sync=0.002 s, total=0.016 s; sync files=2, longest=0.001 s, average=0.001 s; distance=0 kB, estimate=0 kB; lsn=0/1C8C390, redo lsn=0/1C8C390
+2026-08-11 16:30:27.350 SAST [11050] LOG:  database system is ready to accept connections
+2026-08-11 16:35:27.356 SAST [11056] LOG:  checkpoint starting: time
+2026-08-11 16:35:27.860 SAST [11056] LOG:  checkpoint complete: wrote 4 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.427 s, sync=0.002 s, total=0.517 s; sync files=5, longest=0.001 s, average=0.001 s; distance=13 kB, estimate=13 kB; lsn=0/1C8F8D8, redo lsn=0/1C8F880
