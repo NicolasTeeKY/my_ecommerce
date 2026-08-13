@@ -152,10 +152,8 @@ if not DEBUG:
 
     #copy static file to a certain path
     STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles'),
-
     #enable whitenoise
     STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-
 # config/settings.py at the very bottom
 
 MEDIA_URL = '/media/'
