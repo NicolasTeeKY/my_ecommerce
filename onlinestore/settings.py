@@ -148,7 +148,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 STATIC_URL = 'static/'
 #this here is for render
 #copy static file to a certain path
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles'),
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 #enable whitenoise
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 # config/settings.py at the very bottom
