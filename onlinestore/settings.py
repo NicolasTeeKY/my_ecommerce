@@ -143,17 +143,14 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/6.0/howto/static-files/
+BASE_DIR = Path(__file__).resolve().parent.parent
 
 STATIC_URL = 'static/'
-
 #this here is for render
-
-if not DEBUG:
-
-    #copy static file to a certain path
-    STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles'),
-    #enable whitenoise
-    STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+#copy static file to a certain path
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles'),
+#enable whitenoise
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 # config/settings.py at the very bottom
 
 MEDIA_URL = '/media/'
