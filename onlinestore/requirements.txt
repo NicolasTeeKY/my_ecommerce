@@ -1,12 +1,17 @@
 asgiref==3.12.1
-certifi==2026.7.22
-charset-normalizer==3.4.9
-crispy-bootstrap5==2026.3
+brotli==1.2.0
+click==8.4.2
+dj-database-url==3.1.2
 Django==6.1
-django-crispy-forms==2.7
-idna==3.18
-pillow==12.3.0
+gunicorn==26.0.0
+h11==0.16.0
+lxml @ file:///home/builder/.termux-build/python-lxml/src
+packaging==26.3
+proot-distro @ file:///home/builder/.termux-build/proot-distro/src
 psycopg2-binary==2.9.12
-requests==2.34.2
+pycairo==1.29.0
+PyGObject==3.56.3
+python-decouple==3.8
 sqlparse==0.5.5
-urllib3==2.7.0
+uvicorn==0.52.1
+whitenoise==6.12.0

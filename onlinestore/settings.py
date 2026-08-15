@@ -9,8 +9,9 @@ https://docs.djangoproject.com/en/6.0/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/6.0/ref/settings/
 """
-import os
+import os dj_database_url
 from pathlib import Path
+from decouple import config  # If you use python-decouple
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -25,7 +26,7 @@ SECRET_KEY = 'django-insecure-m50f+q^my(j8ew8iix(rl^l&98%g^h(m@+jm3p5tt&&9iq6pe4
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['https://southart.onrender.com/']
 
 
 # Application definition
@@ -77,16 +78,35 @@ WSGI_APPLICATION = 'onlinestore.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/6.0/ref/settings/#databases
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'django',   # Use the DB name you created
-        'USER': 'Nico',           # Use the username you created
-        'PASSWORD': '123456', # Use the password you created
-        'HOST': 'localhost',             # Or the IP if running elsewhere
-        'PORT': '5432',                  # Default PostgreSQL port
-    }
-}
+#DATABASES = {
+ #   'default': {
+  #      'ENGINE': 'django.db.backends.postgresql',
+   #     'NAME': 'django',   # Use the DB name you created
+    #    'USER': 'Nico',           # Use the username you created
+     #   'PASSWORD': '123456', # Use the password you created
+      #  'HOST': 'localhost',             # Or the IP if running elsewhere
+       # 'PORT': '5432',                  # Default PostgreSQL port
+    #}
+#}
+
+
+# ... other settings ...
+
+# Check if DATABASE_URL environment variable exists
+DATABASE_URL = config('DATABASE_URL', default=None)
+
+if DATABASE_URL:
+        DATABASES = {
+                        'default': dj_database_url.config(default=DATABASE_URL, conn_max_age=600)
+                            }
+    else:
+            # Fallback for local development
+                DATABASES = {
+                                'default': {
+                                                'ENGINE': 'django.db.backends.sqlite3',
+                                                            'NAME': BASE_DIR / 'db.sqlite3',
+                                                                    }
+                                    }
 
 # If psycopg / psycopg2 is not available (for quick local dev),
 # fall back to SQLite so manage.py checks and tests can run.
