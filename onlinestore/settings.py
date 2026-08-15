@@ -97,17 +97,16 @@ WSGI_APPLICATION = 'onlinestore.wsgi.application'
 DATABASE_URL = config('DATABASE_URL', default=None)
 
 if DATABASE_URL:
-        DATABASES = {
-                        'default': dj_database_url.config(default=DATABASE_URL, conn_max_age=600)
-                            }
-    else:
-            # Fallback for local development
-                DATABASES = {
-                                'default': {
-                                                'ENGINE': 'django.db.backends.sqlite3',
-                                                            'NAME': BASE_DIR / 'db.sqlite3',
-                                                                    }
-                                    }
+    DATABASES = {
+            'default': dj_database_url.config(default=DATABASE_URL, conn_max_age=600)
+            }
+else:
+    # Fallback for local development
+    DATABASES = {
+            'default': {
+                'ENGINE': 'django.db.backends.sqlite3','NAME': BASE_DIR / 'db.sqlite3',
+                }
+            }
 
 # If psycopg / psycopg2 is not available (for quick local dev),
 # fall back to SQLite so manage.py checks and tests can run.
