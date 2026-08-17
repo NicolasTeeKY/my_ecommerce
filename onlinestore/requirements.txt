@@ -12,6 +12,6 @@ psycopg2-binary==2.9.12
 pycairo==1.29.0
 PyGObject==3.56.3
 python-decouple==3.8
-sqlparse==0.5.5
+sqlparse==0.6.0
 uvicorn==0.52.1
 whitenoise==6.12.0
