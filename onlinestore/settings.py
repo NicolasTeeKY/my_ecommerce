@@ -93,18 +93,16 @@ WSGI_APPLICATION = 'onlinestore.wsgi.application'
 # ... other settings ...
 
 # Check if DATABASE_URL environment variable exists
-DATABASE_URL = config('DATABASE_URL', default=None)
+import dj_database_url
+import os
 
-if DATABASE_URL:
-
-    DATABASES = {
-                'default': dj_database_url.config(
-                            default=os.environ['SUPABASE_DATABASE_URL'],
-                            conn_max_age=600,
-                            ssl_require=True,
-                                )
-                }
-
+DATABASES = {
+            'default': dj_database_url.config(
+                default=os.environ['SUPABASE_DATABASE_URL'],
+                conn_max_age=600,
+                ssl_require=True,
+                                            )
+            }
 else:
     # Fallback for local development
     DATABASES = {

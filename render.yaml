@@ -6,7 +6,7 @@ services:
     buildCommand: './build.sh'
     startCommand: 'python -m gunicorn onlinestore.asgi:application -k uvicorn.workers.UvicornWorker'
 envVars:
-  - key: DATABASE_URL
+  - key: SUPABASE_DATABASE_URL
     sync: false        # tells Render: set this manually in the dashboard
   - key: SECRET_KEY
     generateValue: true
