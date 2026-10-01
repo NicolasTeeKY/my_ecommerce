@@ -91,8 +91,6 @@ WSGI_APPLICATION = 'onlinestore.wsgi.application'
 
 
 # ... other settings ...
-import os
-print("SUPABASE_DATABASE_URL =", repr(os.environ.get('SUPABASE_DATABASE_URL')))
 # Check if DATABASE_URL environment variable exists
 SUPABASE_DATABASE_URL = config('SUPABASE_DATABASE_URL', default=None)
 
